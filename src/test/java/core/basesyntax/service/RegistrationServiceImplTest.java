@@ -94,11 +94,13 @@ class RegistrationServiceImplTest {
         user.setAge(21);
         user.setLogin("Brother_Tween");
         user.setPassword("Password");
-
+        try {
         registrationService.register(user);
-        User userResult = registrationService.register(user);
-
-        Assert.assertNull(userResult);
+        registrationService.register(user);
+        } catch (NoValidUserException e) {
+            return;
+        }
+        Assert.fail("Two users cannot have the same logins.\n");
 
     }
 

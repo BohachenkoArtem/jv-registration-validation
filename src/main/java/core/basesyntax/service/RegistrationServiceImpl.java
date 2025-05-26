@@ -15,7 +15,7 @@ public class RegistrationServiceImpl implements RegistrationService {
         String password = user.getPassword();
 
         if (age == null || login == null || password == null) {
-            throw new NoValidUserException("Input date is not valid");
+            throw new NoValidUserException("Input data is not valid");
         }
         if (age < 18) {
             throw new NoValidUserException("Age of user less then 18");
@@ -32,6 +32,6 @@ public class RegistrationServiceImpl implements RegistrationService {
             return user;
         }
 
-        return null;
+        throw new NoValidUserException("A user with this login is already registered in the system.");
     }
 }

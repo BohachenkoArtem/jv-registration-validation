@@ -1,4 +1,4 @@
-package core.basesyntax.Exception;
+package core.basesyntax.exception;
 
 public class NoValidUserException extends RuntimeException {
     public NoValidUserException(String message) {

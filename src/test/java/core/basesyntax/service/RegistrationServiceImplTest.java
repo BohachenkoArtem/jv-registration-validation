@@ -95,8 +95,8 @@ class RegistrationServiceImplTest {
         user.setLogin("Brother_Tween");
         user.setPassword("Password");
         try {
-        registrationService.register(user);
-        registrationService.register(user);
+            registrationService.register(user);
+            registrationService.register(user);
         } catch (NoValidUserException e) {
             return;
         }

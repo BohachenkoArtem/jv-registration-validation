@@ -32,6 +32,7 @@ public class RegistrationServiceImpl implements RegistrationService {
             return user;
         }
 
-        throw new NoValidUserException("A user with this login is already registered in the system.");
+        throw new NoValidUserException("A user with this login is "
+                + "already registered in the system.");
     }
 }
